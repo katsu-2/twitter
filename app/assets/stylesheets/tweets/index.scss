@@ -1,0 +1,40 @@
+.tweet_around {
+  .tweet_content {
+    display: flex;
+    justify-content: center;
+
+    .user {
+      width: 20%;
+      background: black;
+      height: 200px;
+      margin: 0 20px 0 auto;
+    }
+
+    .tweet {
+      width: 40%;
+      height: 500px;
+
+      .tweet_each {
+        border: 1px solid #cfcfcf;
+        border-radius: 10px;
+        margin-bottom: 1px;
+
+        .tweet_user {
+          p {
+
+          }
+        }
+        .tweet_content {
+          padding: 10px 30px;
+        }
+      }
+    }
+
+    .other {
+      width: 20%;
+      background: green;
+      height: 200px;
+      margin: 0 auto 0 20px;
+    }
+  }
+}
