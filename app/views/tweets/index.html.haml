@@ -1,0 +1,13 @@
+.around
+  .tweet_around
+    .tweet_content
+      .user
+      .tweet
+        - @tweets.each do |tweet|
+          .tweet_each
+            .tweet_user
+              %p ユーザー
+            = link_to tweet_path(tweet.id) do
+              .tweet_content
+                = tweet.tweet
+      .other
