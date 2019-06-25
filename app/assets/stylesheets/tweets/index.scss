@@ -12,8 +12,22 @@
 
     .tweet {
       width: 40%;
-      border: 1px solid #cfcfcf;
       height: 500px;
+
+      .tweet_each {
+        border: 1px solid #cfcfcf;
+        border-radius: 10px;
+        margin-bottom: 1px;
+
+        .tweet_user {
+          p {
+
+          }
+        }
+        .tweet_content {
+          padding: 10px 30px;
+        }
+      }
     }
 
     .other {
