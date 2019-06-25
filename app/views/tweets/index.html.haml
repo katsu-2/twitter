@@ -11,7 +11,8 @@
         - @tweets.each do |tweet|
           .tweet_each
             .tweet_user
-              %p ユーザー
+              %p
+                = tweet.user.name
             = link_to tweet_path(tweet.id) do
               .tweet_content
                 = tweet.tweet
