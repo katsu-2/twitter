@@ -1,1 +1,3 @@
 = @tweet.tweet
+
+= link_to '削除', tweet_path(@tweet),method: :delete, data: {confirm: "本当に良いですか？"}

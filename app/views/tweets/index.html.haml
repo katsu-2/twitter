@@ -3,6 +3,11 @@
     .tweet_content
       .user
       .tweet
+        = form_with model: @tweet do |f|
+          %p ツイート
+          = f.text_area :tweet
+          = f.submit "送信"
+
         - @tweets.each do |tweet|
           .tweet_each
             .tweet_user

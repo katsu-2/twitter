@@ -1,10 +1,13 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+
   def index
     @tweets = Tweet.recent
+    @tweet = Tweet.new
   end
 
-  def new
-    @tweet = Tweet.new
+  def show
+    @tweet = Tweet.find(params[:id])
   end
 
   def create
@@ -16,8 +19,17 @@ class TweetsController < ApplicationController
     end
   end
 
+  def destroy
+    @tweet.destroy
+    redirect_to tweets_path
+  end
+
   private
     def tweet_params
         params.require(:tweet).permit(:tweet)
+    end
+
+    def set_tweet
+      @tweet = Tweet.find(params[:id])
     end
 end
