@@ -2,8 +2,8 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tweets = Tweet.recent
-    @tweet = Tweet.new
+    @tweets = Tweet.recent.includes(:user)
+    @tweet = current_user.tweets.new
   end
 
   def show
@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
+    @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
         redirect_to tweets_path
     else
